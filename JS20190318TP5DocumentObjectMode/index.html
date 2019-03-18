@@ -36,8 +36,18 @@
             document.getElementById(id).style.color = "red";
             document.getElementById(id).style.position = "fixed";
             document.getElementById(id).style.top = "100px";
-            document.getElementById(id).style.left = "300px";
-        
+            document.getElementById(id).style.left = "300px";      
+
+        }
+
+        function editNodeText2(id, newText) {
+            var node = document.getElementById(id).firstChild;      // make changes to the firstChild
+            node.nodeValue = newText;            
+        }
+
+        function editNodeText3(id, newText) {
+            var node = document.getElementById(id).lastChild;      // make changes to the lastChild
+            node.nodeValue = newText;
         }
 
 
@@ -49,9 +59,21 @@
 <body>
     <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
 
+    <p>*************</p>
 
+    <div id="divEx" onclick="editNodeText2('divEx', 'New Text in Div')">
+        <b>Some Bold Text</b><br />
+        <i>Italic Text</i><br />
 
+    </div>
 
+    <p>*************</p>
+
+    <div id="divEx3" onclick="editNodeText3('divEx3', 'New Text in Div')">
+        <b>Some Bold Text3</b><br />
+        <i>Italic Text3</i><br />
+
+    </div>
 
 </body>
 
