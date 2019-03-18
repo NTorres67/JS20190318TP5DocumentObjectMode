@@ -19,12 +19,10 @@
      -------------
     Document == Parent; All other elements == Child of the Parent
     Works the same way in divs -->
-    <!--  -->
-    <!--  -->
 
 
     <script>
-        //
+        
         function editNodeText(id, newText) {
             var node = document.getElementById(id);
 
@@ -36,8 +34,7 @@
             document.getElementById(id).style.color = "red";
             document.getElementById(id).style.position = "fixed";
             document.getElementById(id).style.top = "100px";
-            document.getElementById(id).style.left = "300px";      
-
+            document.getElementById(id).style.left = "300px";     
         }
 
         function editNodeText2(id, newText) {
@@ -61,13 +58,8 @@
             // as you keep clicking, [2] keeps changing and adding new roles
             var randTextNode = document.createTextNode("I'm random");   // insert text node
             node.appendChild(randTextNode);
-
-
-        }                                               
-
-
-
-    </script>
+        }                                            
+     </script>
 
 </head>
 
