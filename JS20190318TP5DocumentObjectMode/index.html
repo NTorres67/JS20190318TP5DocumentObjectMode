@@ -28,10 +28,16 @@
         function editNodeText(id, newText) {
             var node = document.getElementById(id);
 
-            while (node.firstChild)
-                node.removeChild(node.firstChild);
+            while (node.firstChild)                                 // deletes orginal text node
+                node.removeChild(node.firstChild);                  // deletes original text node
 
-            node.appendChild(document.createTextNode(newText));
+            node.appendChild(document.createTextNode(newText));     // add new text
+
+            document.getElementById(id).style.color = "red";
+            document.getElementById(id).style.position = "fixed";
+            document.getElementById(id).style.top = "100px";
+            document.getElementById(id).style.left = "300px";
+        
         }
 
 
