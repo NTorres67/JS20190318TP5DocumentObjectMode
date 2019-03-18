@@ -50,6 +50,21 @@
             node.nodeValue = newText;
         }
 
+        function editNodeText4(id, newText) {
+            var node = document.getElementById(id);     // remove child - [#] determines child index
+            node.removeChild(node.childNodes[0]);       // [0] == nothing happens; [1] == <b>; [2] == <br />;
+                                                        // [3] == nothing happens; [4] == <i>
+            node.childNodes[2].nodeValue = newText;
+            var newNode = document.createElement('hr'); // insert element node; hr == horizontal role
+            node.appendChild(newNode);                  // create/insert new node
+
+            // as you keep clicking, [2] keeps changing and adding new roles
+            var randTextNode = document.createTextNode("I'm random");   // insert text node
+            node.appendChild(randTextNode);
+
+
+        }                                               
+
 
 
     </script>
@@ -61,18 +76,29 @@
 
     <p>*************</p>
 
+    <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
+
     <div id="divEx" onclick="editNodeText2('divEx', 'New Text in Div')">
         <b>Some Bold Text</b><br />
         <i>Italic Text</i><br />
-
     </div>
 
     <p>*************</p>
 
+    <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
+
     <div id="divEx3" onclick="editNodeText3('divEx3', 'New Text in Div')">
         <b>Some Bold Text3</b><br />
         <i>Italic Text3</i><br />
+    </div>
 
+    <p>*************</p>
+
+    <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
+
+    <div id="divEx4" onclick="editNodeText4('divEx4', 'New Text in Div')">
+        <b>Some Bold Text4</b><br />  
+        <i>Italic Text4</i><br />
     </div>
 
 </body>
