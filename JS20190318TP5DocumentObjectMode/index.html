@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS20190318TP5 - Document Object Model (DOM)</title>
+
+    <!-- Access all the different objects that lie within your HTML code.
+    Every web page is considered to be part of the document object
+    Every tag is referred to as a node inside of the DOM
+    JS can be used to manipulate all the elements whether or not they lie between tags by referrting to them
+    as their identification name
+     Parent Child Relationship
+     -------------
+    |    Parent   |
+    |-------------|
+    |   -------   |
+    |  | Child |  |
+    |   -------   |
+     -------------
+    Document == Parent; All other elements == Child of the Parent
+    Works the same way in divs -->
+    <!--  -->
+    <!--  -->
+
+
+    <script>
+        //
+        function editNodeText(id, newText) {
+            var node = document.getElementById(id);
+
+            while (node.firstChild)
+                node.removeChild(node.firstChild);
+
+            node.appendChild(document.createTextNode(newText));
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <span id="spanEx" onclick="editNodeText('spanEx', 'New Text is Here')">Change this text</span><br />
+
+
+
+
+
+</body>
+
+</html>
